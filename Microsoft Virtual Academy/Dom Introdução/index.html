@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>HTML5 e DOM - introdução</title>
+<meta charset="utf-8">
+<style>
+#msg {
+	width:100%;
+	padding:15px;
+	margin:;15px;
+	font-family: Comic Sans MS;
+	font-size:medium;
+	background-color: #ADD8E6;
+	color: #006400;
+	border:2px dotted #008B8B;
+}
+.inline-to-block-delimiter {
+	margin:10px;
+}
+</style>
+
+<script>
+function insertText(text){
+	document.getElementById("msg").innerHTML += "<p>"+text+"</p>";
+	document.getElementById('text1').value = "";
+}
+function selectAll(panel){
+	window.getSelection().selectAllChildren(panel);
+}
+</script>
+
+</head>
+<body>
+
+<div class="inline-to-block-delimiter">
+<label style="" for="text1">Digite um texto: </label>
+<!-- <input type="text" name="text1" id="text1" placeholder="Digite um texto aqui..." maxlength="40" /> -->
+<textarea style="display:inline-block;width:100%;" rows="5" cols="40" name="text1" id="text1" placeholder="Digite um texto aqui..." maxlength="200">
+</textarea>
+<input style="display:table-row;" type="button" name="button1" value="Inserir" onclick="insertText(document.getElementById('text1').value);" />
+<input style="display:table-row;" type="button" name="button2" value="Selecionar tudo" onclick="selectAll(document.getElementById('msg'));" />
+</div>
+
+<div id="msg"></div>
+
+</body>
+</html>

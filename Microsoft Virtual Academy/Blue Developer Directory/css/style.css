@@ -1,0 +1,266 @@
+/*
+  Isso vai aplicar o formato a TODOS os elementos da página,
+  o que é especificado pelo wildcard selector '*'.
+*/
+* {
+	margin: 0 auto 0 auto;	/* isso forçará TODOS os elementos a ficarem no centro, desde que a largura do conteúdo seja especificada */
+	text-align:left;
+}
+
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	/* alinhamento de texto à esquerda */
+	text-align:left;
+	/* tamanho da fonte 0.8125em (13px) */
+	font-size:13px;
+	/* a fonte utilizada é arial(principal),helvetica(secundária),sans-serif(última opção) */
+	font-family:arial,helvetica,sans-serif;
+	/* cor do texto: "black"(preta) */
+	color:black;
+	/* cor de fundo */
+	background-color:#1c478e;
+	/* imagem de fundo: background.png */
+	background-image:url(../images/background.png);
+	/* isto repetirá a imagem de fundo APENAS na horizontal (repeat-x) */
+	background-repeat:repeat-x;
+}
+
+/* 
+	Página browse.html 
+*/
+a {
+	/* retirando o sublinhado dos links */
+	text-decoration: none;
+}
+
+table, tr, th, td {
+	/* zerar as margens para os elementos de tabela: table, tr, th, td */
+	margin:0;
+}
+
+table {
+	/* espaçamento de 10px no topo e embaixo, e nenhum dos lados */
+	padding:10px 0;
+}
+
+th {
+	/* centralizando os cabeçalhos de tabela */
+	text-align:center;
+}
+
+td {
+	/* espaçamento de 5 px no topo e embaixo, e de 20 px nos lados */
+	padding:5px 20px;
+}
+/* 
+	FIM DE Página browse.html 
+*/
+
+h2 {
+	padding:0 0 10px 0;
+}
+
+h3 {
+	font-size:16px;
+	font-weight:bold;
+	color:#054dbc;
+	padding:15px 0;
+}
+
+h4 {
+	font-size:16px;
+	font-weight:;
+	padding:0 0 7px 0;
+	color:#054dbc;
+}
+
+p{
+	margin:10px 0;
+}
+
+/* Página contact.html */
+label {
+	display:inline-block;
+	width:150px;
+}
+/* o div que substitui uma table para formatação, nas caixas de verificação ao final */
+section .tableless label{
+	width:60px;
+}
+/* um grupo de botões de opção, após "Best time to call" */
+section .radiogroup label{
+	width:60px;
+}
+/* FIM DE Página contact.html */
+
+#container {
+	width:960px;
+}
+
+header {
+	width:960px;
+	height:84px;
+}
+header h1 {
+	float:left;
+	color:white;
+	font-size:43px;
+	padding:20px 0 0 20px;
+}
+header h2 {
+	float:right;
+	color:#a9d1fa;
+	padding:40px 20px 0 20px;
+}
+header h1 span.blue-text {
+	color:#67a0f5;
+}
+header h2 span.white-text {
+	color:white;
+}
+
+/* como fazer um menu horizontal */
+#menu {
+	/* menu exibido como item de bloco */
+	display:block;
+	/* elemento flutuado à esquerda */
+	float:left;
+	/* "zerar" a flutuação (em relação a elementos anteriores) */
+	clear:both;
+	/* dimensões */
+	width:960px;
+	height:54px;
+}
+#menu ul {
+	/* tirar os marcadores da lista */
+	list-style:none;
+	/* espaçamento só no topo (padding-top) */
+	padding:20px 0 0 0;
+	/* margem definida automaticamente */
+	margin-left:auto;
+	width:960px;
+}
+#menu li {
+	/* tirar os marcadores de cada item de lista */
+	list-style:none;
+	/* sem espaçamento */
+	padding:0;
+	/* item de lista "inline" */
+	display:inline;
+}
+#menu li a, #menu li a:visited {
+	/* cada link será flutuado à esquerda */
+	float:left;
+	/* o estilo ficará "por conta" de cada link */
+	color:white;
+	text-decoration:none;			/* links sem sublinhado */
+	text-align: center;				/* links ao centro */
+	font-size:15px;
+	font-weight:bold;				/* texto em negrito */
+	padding:0 13px 0 13px;	/* espaçamento somente nos lados */
+}
+/* FIM DE menu horizontal */
+
+/* como fazer um menu vertical */
+#leftmenu {
+	/* espaço para separar o menu esquerdo do menu horizontal */
+	margin-top:15px;
+	width:190px;
+	float:left;
+	background:#1c478e;
+	border-radius:10px;
+	padding:15px 20px 10px 10px;
+}
+#leftmenu ul {
+	list-style:none;
+	padding:0;
+}
+#leftmenu li {
+	list-style:none;
+	padding:15px 0 8px 0;
+	border-bottom:1px dashed white;
+}
+#leftmenu li a, #leftmenu li a:visited {
+	color:white;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:14px;
+}
+#leftmenu h3 {
+	color:white;
+	padding:0 0 8px 0;
+	border-bottom:2px solid white;
+	font-size:16px;
+}
+/* FIM DE menu vertical */
+
+section {
+	display:block;
+	margin:15px 0 0 15px;
+	padding:15px;
+	width:680px;
+	float:left;
+	background:white;
+	border-radius:10px;
+	border:6px solid #1c478e;
+}
+
+.float {
+	float:right;
+	padding:15px;
+}
+
+.developer {
+	width:170px;
+	float:right;
+}
+/* lista de desenvolvedores */
+.developer ul {
+	list-style:none;
+	margin:0 0 10px 0;
+	padding:0;
+}
+/* atributos do desenvolvedor */
+.developer li {
+	list-style:none;
+	/* espaçamento entre linhas */
+	line-height:1.7em;
+}
+.developer a, .developer a:visited {
+	display:block;
+	text-align:center;
+	width:90px;
+	margin: 0 15px 0 auto;
+	padding: 0 5px;
+	background-color:#143467;
+	color:white;
+	border:1px solid #1C478E;
+	border-radius:5px;
+	text-decoration:none;
+	font-weight: bold;
+}
+.developer a:hover {
+	color:#143467;
+	background-color:white;
+}
+
+table.dev-table, table.dev-table tr, table.dev-table th, table.dev-table td {
+	/* tamanho de fonte 10% maior que a do texto  */
+	font-size:110%;
+}
+
+table.dev-table th, table.dev-table td {
+	/* bordas embaixo */
+	border-bottom:1px dashed black;
+}
+
+footer {
+	text-align:center;
+	color:#ffffff;
+	background:#000000;
+	margin:20px;
+	padding:10px 0;
+}

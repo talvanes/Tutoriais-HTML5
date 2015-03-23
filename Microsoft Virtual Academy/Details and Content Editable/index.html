@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Details e contenteditable</title>
+</head>
+<style>
+div {
+background-color:#7FFFD4;
+color:#FF6347;
+border:1px solid #FFF5EE;
+font-family:Verdana;
+font-style:oblique;
+font-weight:bolder;
+}
+</style>
+<body>
+<details>
+<summary>Progress Bar: <progress max="100" value="62"/> 62,0% </summary>
+<dl>
+<dt>Total size:</dt>
+<dd>100 units</dd>
+<dt>Transferred:</dt>
+<dd>62 units</dd>
+<dt>Transfer rate:</dt>
+<dd>23,4 KB/s</dd>
+<dt>File name:</dt>
+<dd>foobar.txt</dd>
+</dl>
+</details>
+<div spellcheck="true" contenteditable="true">
+Edite-me se for capaz!
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8" />
+<title>HTML5: drag & drop demonstration</title>
+<base href="../media/images/" />
+<!-- Style - (Copyright MVA) -->
+<style>
+#boxA, #boxB {
+	float:left;
+	width:100px;
+	height:200px;
+	padding:10px;
+	margin:10px;
+	font-size:70%;
+}
+#boxA {
+	background-color:blue;
+}
+#boxB {
+	background-color:green;
+}
+#drag1, #drag2 {
+	width:50px;
+	padding:5px;
+	margin:5px;
+	border:3px solid black;
+	line-height:50px;
+}
+#drag1 {
+	background-color:red;
+}
+#drag2 {
+	background-color:orange;
+}
+</style>
+<!-- Scripts para drag & drop -->
+<script>
+// Quando o usuário inicia um drag, guardamos no dataset do evento
+// o id do objeto sendo arrastado (Copyright MVA)
+function onDragStart (event){
+	event.dataTransfer.setData("ID", event.target.getAttribute('id'));
+}
+// Quando o usuário arrasta sobre um dos painéis, retornamos
+// false para que o evento não se propague para o navegador, o
+// que faria com que o conteúdo fosse selecionado. (Copyright MVA)
+function onDragOver (event){
+	event.preventDefault();
+	return false;
+}
+// Quando soltamos o elemento sobre um painel, movemos o
+// elemento, lendo seu id do dataset do evento. (Copyright MVA)
+function onDragDrop (event){
+	event.preventDefault();
+	var identifier = event.dataTransfer.getData("ID");
+	event.target.appendChild(document.getElementById(identifier));
+}
+</script>
+</head>
+<body spellcheck="true">
+<!-- Painel A -->
+<div id="boxA" ondragover="return onDragOver(event);" ondrop="return onDragDrop(event);">
+		<!-- Draggable 1 -->
+		<div id="drag1" draggable="true" ondragstart="return onDragStart(event);">drag me</div>
+		<!-- Draggable 2 -->
+		<div id="drag2" draggable="true" ondragstart="return onDragStart(event);">drag me</div>
+		<!-- One image -->
+		<img id="drag3" src="garotinhas.jpg" width="50" height="50" draggable="true" ondragstart="return onDragStart(event);" style="border:3px groove #FFEBCD" />
+</div>
+<!-- Painel B -->
+<div id="boxB" ondragover="return onDragOver(event);" ondrop="return onDragDrop(event);"></div>
+</body>
+</html>

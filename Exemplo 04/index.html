@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>HTML5 - drag & drop</title>
+<base href="../media/images/" />
+</head>
+
+<!-- À parte: estilo da "caixa" destino -->
+<style>
+#caixa {
+	width:600px;
+	height:500px;
+	padding:15px;
+	border:2px solid #ababab;
+}
+</style>
+
+<!-- Manipuladores de Evento do "arraste e solte" -->
+<script>
+// ao passar o mouse no elemento destino para o soltar
+function allowDrop (event){
+	// método que evita o comportamento padrão, a fim de permitir o evento de "arrasta e solte"
+	event.preventDefault();
+}
+// o que arrastar?
+function drag (event){
+	// event.dataTransfer.setData (dataType, dataValue):
+	// 		define qual o tipo de dados a ser manipulado no evento
+	// dataType: tipo do dado manipulado - "Text" (texto) ou "File" (arquivo)
+	// dataValue: o valor do elemento alvo - event.target.id: o id do elemento alvo
+	event.dataTransfer.setData("Text", event.target.id);
+}
+// onde soltar?
+function drop (event){
+	// "evitar" o evento padrão
+	event.preventDefault();
+	// obter o dado manipulado extraído do método "drag(event)"
+	// 		event.dataTransfer.getData(dataType)
+	var data = event.dataTransfer.getData("Text");
+	// "inserir" o dado manipulado (event.target.appendChild(id)) dentro do elemento alvo (document.getElementById(data) -> id)
+	event.target.appendChild(document.getElementById(data));
+}
+</script>
+
+<!-- No documento, uma imagem e um espaço para soltar elementos -->
+<body>
+
+<div id="caixa"
+ondragover="allowDrop(event)" ondrop="drop(event)">		<!-- Elemento alvo que vai "abrigar" a imagem do exemplo -->
+</div>
+
+<img id="imagem1" src="finland the open source society.jpg" alt="Linux Finland" width="290" height="306"
+draggable="true" ondragstart="drag(event)"/>	<!-- A imagem será arrastada para o elemento abaixo -->
+
+<img id="imagem2" src="windows-linux.jpg" alt="Windows Linux" width="300" height="300"
+draggable="true" ondragstart="drag(event)"/>
+
+</body>
+
+</html>

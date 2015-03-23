@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Input - Validadores e Tipos de Dados</title>
+</head>
+<body>
+<fieldset>
+<legend>Tipos de campos e validadores</legend>
+<form name="teste" action="" method="post">
+	<label for="login">Login:
+	<input type="text" id="login" name="user" placeholder="talvanes_sousa@hotmail.com" autofocus required />
+	</label><br/>
+	<label for="pass">Senha:
+	<input type="password" id="pass" name="password" pattern="^(?=[a-zA-Z])(?=.*[0-9])(?=.*[#\$_])(?=.*[A-Z])(?=.*[a-z])(?!.*[^a-zA-Z0-9#\$_])(?!.*\s).{8,12}$" required />
+	</label><br/>
+	<label for="zip_code">Zip code:
+	<input type="text" id="zip_code" name="zip" placeholder="Insert Zip code here, like this: XXXXX-XXX" pattern="\d{5}-?\d{3}" />
+	</label><br/>
+	<label for="tweet">Give a tweet:
+	<textarea id="tweet" name="tweetbox" maxlength="140" placeholder="Tweet!" oninput="" required>
+	</textarea>
+	</label><br/>
+	<!-- Evento oninput e método sender.setCustomValidity() -->
+	<input type="submit" value="Salvar Rascunho" formnovalidate />
+	<input type="submit" value="Enviar" />
+</form>
+</fieldset>
+</body>
+</html>

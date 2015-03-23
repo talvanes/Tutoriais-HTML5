@@ -1,0 +1,9 @@
+body {
+  background: #999999;
+}
+#canvas1,#canvas2,#canvas3,#canvas4,#canvas5 {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+}

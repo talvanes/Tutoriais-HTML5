@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Canvas API</title>
+<base href="../media/images/" target="_blank" />
+</head>
+<body>
+<canvas id="canvas" width="800" height="600" style="border: 2px groove #8A2BE2;">
+Seu navegador n&atilde;o suporta o elemento Canvas.
+</canvas>
+<img id="imagem" src="finland the open source society.jpg" width="153" height="145" />
+<script>
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+// Gradiente linear
+var grad1 = context.createLinearGradient(50,50,250,200);
+grad1.addColorStop(0,"#00008B");
+grad1.addColorStop(0.5,"#ADFF2F");
+grad1.addColorStop(1,"#00BFFF");
+// Gradiente radial
+var grad2 = context.createRadialGradient(550,160,15,600,200,150);
+grad2.addColorStop(0,"#000000");
+grad2.addColorStop(0.1,"#161616");
+grad2.addColorStop(0.2,"#323232");
+grad2.addColorStop(0.3,"#646464");
+grad2.addColorStop(0.4,"#C8C8C8");
+grad2.addColorStop(0.5,"#D9D9D9");
+grad2.addColorStop(0.6,"#EAEAEA");
+grad2.addColorStop(0.7,"#BCBCBC");
+grad2.addColorStop(0.8,"#DDDDDD");
+grad2.addColorStop(0.9,"#707070");
+grad2.addColorStop(1,"#FFFFFF");
+// Desenhando as formas
+context.beginPath();
+context.fillStyle = grad2;
+context.strokeStyle = grad1;
+context.strokeRect(50,50,250,200);
+context.beginPath();
+context.arc(600,200,150,0,2*Math.PI);
+context.fill();
+context.stroke();
+context.font = "45px Impact";
+context.strokeText("See you later!",50,100);
+// Desenhando uma imagem
+var imagem = document.getElementById("imagem");
+context.drawImage(imagem,50,280);
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Página de Teste</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/medias.css" />
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section id="container">
+      <header>
+        <h1>Website de Teste</h1>
+      </header>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+        <span class="menu-button">
+          <a href="#">&#9776; Menu</a>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="contact.html">Contato</a></li>
+          </ul>
+        </span>
+      </nav>
+      <section id="content">
+      <h2>Participe. Sua opinião é muito importante.</h2>
+        <form name="form1" action="" method="post" charset="utf-8" autocomplete="no">
+          <p>
+            <label for="nome" class="required">Nome Completo:</label>
+            <input type="text" id="nome" class="input input-border" name="nome"  title="Nome e sobrenome" placeholder="Nome completo..." required />
+          </p>
+          <p>
+            <label for="contato" class="required">E-Mail para Contato:</label>
+            <input type="email" id="contato" class="input input-border" name="contato" placeholder="E-mail para contato..." required />
+          </p>
+          <p>
+            <label for="nasc" class="required">Nascimento:</label>
+            <input type="date" id="nasc" class="input input-border" name="nasc" required />
+          </p>
+          <p>
+            <label for="tel">Telefone (BR):</label>
+            <input type="tel" id="tel" class="input input-border" name="tel" title="Insira um número de telefone com, no mínimo, 8 dígitos (ou 9 dígitos, dependendo da região), juntamente com o DDD, por exemplo em (11) 2134-6655 ou (11) 99878-3211"
+           placeholder="(XX) XXXX-XXXX | (XX) 9XXXX-XXXX" pattern="^\(\d{2}\) \d{4,5}-\d{4}$" />
+          </p>
+          <p>
+            <label for="cor">Cor favorita:</label>
+            <input type="color" id="cor" class="input input-no-border" name="cor" />
+          </p>
+          <p>
+            <label for="comentario">Seu comentário aqui:</label>
+            <textarea id="comentario" class="input input-border" name="comentario" rows="10" cols="60"></textarea>
+          </p>
+          <p>
+            <button type="submit" class="button button-border">Enviar</button>
+          </p>
+        </form>
+      </section>
+      <div style="clear:both"></div>
+      <footer>
+        <p>Copyright <sup>&copy;</sup> 2015. <strong style="font-style:italic">Fict&iacute;cia SA</strong>. Todos os direitos reservados.</p>
+      </footer>
+      </section>
+  </body>
+</html>

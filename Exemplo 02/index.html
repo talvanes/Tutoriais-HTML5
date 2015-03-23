@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Canvas element</title>
+<base href="../media/images/" />
+</head>
+
+<body>
+<!-- Imagem a ser usada -->
+<p align="left">Imagem a ser usada:<br>
+<img style="display:inline-block;" id="imagem" src="garotinhas.jpg" alt="Garotinhas em formato &iacute;cone" width="128" height="128"/>
+</p>
+
+<!-- Container -->
+<canvas id="minhaTela" width="500" height="400" style="border:1px solid #000000">
+Seu navegador n&atilde;o suporta o recurso Canvas.
+</canvas>
+
+<!-- Retângulo -->
+<script>	//Retângulo
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Pegar o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// Desenha um retângulo
+contexto.fillStyle = "#FF04B0";	// Cor de preenchimento
+contexto.fillRect(8,8,150,250);	//ctx.fillRect(x,y,width,height)
+</script>
+
+<!-- Linha reta -->
+<script>
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Usar o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// Desenha uma linha reta
+contexto.moveTo(8,8);		// ponto inicial da reta: ctx.moveTo(x,y)
+contexto.lineTo(158,258);	// ponto final da reta: ctx.lineTo(x,y)
+contexto.stroke();			// traçar a reta: ctx.stroke()
+</script>
+
+<!-- Círculo -->
+<script>
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Usar o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// Desenha uma circunferência, ou ...
+contexto.beginPath();						// Cria um caminho: ctx.beginPath()
+contexto.arc(250,200,75,0,2*Math.PI);		// Desenha o círculo: ctx.arc(x,y,r,start,stop)
+contexto.strokeStyle = "#D3AACF";
+contexto.stroke();							// Desenha a linha (do círculo): ctx.stroke()
+// ou um círculo
+contexto.beginPath();						// Cria um caminho: ctx.beginPath()
+contexto.fillStyle = "#ABC0DF";
+contexto.arc(400,150,60,0,2*Math.PI);		// Desenha o círculo: ctx.arc(x,y,r,start,stop)
+contexto.fill();							// Desenha o contorno (do círculo): ctx.fill()
+</script>
+
+<!-- Texto -->
+<script>
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Obter o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// Desenha um texto
+contexto.font = "48px Courier New";		// Definindo a fonte do texto a ser desenhado
+contexto.strokeText("Talvanes",170,40);	// Desenhando um texto preenchido
+// Desenha um texto preenchido
+contexto.font = "20px Comic Sans MS";		// Definindo a fonte do texto a ser desenhado
+contexto.fillStyle = "navy";				// Outra cor para o preenchimento
+contexto.fillText("O Gostoso das Gatinhas",170,64);	// Desenhando um texto preenchido
+</script>
+
+<!-- Gradientes - Linear e Radial -->
+<script>
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Obter o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// Criando gradiente linear
+var grdLin = contexto.createLinearGradient(0,0,180,0);					// Grd. Linear: ctx.createLinearGradient(x,y,x1,y1)
+grdLin.addColorStop(0,"magenta");										// Definindo cores do gradiente: grd.addColorStop(n, color)
+grdLin.addColorStop(0.25,"blue");
+grdLin.addColorStop(0.5,"red");
+grdLin.addColorStop(0.75,"yellow");
+grdLin.addColorStop(1,"green");
+contexto.fillStyle = grdLin;											// definindo estilo preench. com o gradiente recém-criado
+contexto.fillRect(8,264,180,50);										// desenvolvendo a forma geométrica
+// Criando gradiente radial
+var grdRad = contexto.createRadialGradient(98,350,0,132,400,100);		// Grd. radial: ctx.createRadialGradient(x,y,r,x1,y1,r1)
+grdRad.addColorStop(0,"red");											// o mesmo que antes
+grdRad.addColorStop(0.25,"black");
+grdRad.addColorStop(0.5,"blue");
+grdRad.addColorStop(0.75,"green");
+grdRad.addColorStop(1,"yellow");
+contexto.fillStyle = grdRad;											// definindo estilo preench. com o gradiente recém-criado
+contexto.fillRect(8,322,180,70);
+</script>
+
+<!-- Imagens -->
+<script>
+// Achar a tela de desenho
+var tela = document.getElementById("minhaTela");
+// Obter o contexto (container) de desenho
+var contexto = tela.getContext("2d");
+// "Criar" a imagem
+var img = document.getElementById("imagem");
+contexto.drawImage(img,325,240);
+</script>
+
+</body>
+
+</html>

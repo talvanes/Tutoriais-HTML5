@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Alerta: as especificações podem mudar a qualquer momento. -->
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Videochat - elemento device</title>
+<script>
+// Atualizar URL da Stream como o atributo src de <video>
+function update (stream) {
+	document.getElementsByTagName('video')[0].src = stream.url;
+	//Objeto stream: stream.url - string; stream.record() - StreamRecorder; stream.record().stop() - arquivo gravado
+}
+</script>
+</head>
+<body>
+<p>To start chatting, select a video camera:<device type="media" onchange="javascript:update(this.data)"/></p>
+<video autoplay />
+</body>
+</html>

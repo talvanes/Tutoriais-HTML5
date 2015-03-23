@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<head charset="utf-8" />
+<title>HTML5 Avan&ccedil;ado - Server-Side Scripting</title>
+</head>
+<body>
+	<p style="display:table-row">
+		<button id="btnStart" onclick="startSSE(event);" style="display:table-cell">Start Server-Side Event</button>
+		<button id="btnStop" onclick="stopSSE(event);" style="display:table-cell">Stop Server-Side Event</button>
+	</p>
+	<script>
+		var es = null;
+		function startSSE (event) {
+			if (typeof(EventSource)!='undefined') {
+				document.body.innerHTML += 'Start<br>';
+				es = new EventSource('php_sse.php');
+				es.onmessage = function(event){
+					document.body.innerHTML += event.data + '<br>';
+				};
+			} else {
+				document.body.innerHTML += '<b>Desculpe-me, seu navegador n&atilde;o suporta Server-Side Scripting.</b>';
+			}
+		}
+		function stopSSE (event) {
+			es.close();
+			document.body.innerHTML += 'Closed.<br>';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Canvas example 2 - Gradients</title>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000">
+Your browser does not support Canvas element.
+</canvas>
+
+<script>	// Gradients
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+// Linear Gradient
+var linGrad = context.createLinearGradient(0,0,300,0);
+linGrad.addColorStop(0,"blue");
+linGrad.addColorStop(1,"magenta");
+context.fillStyle = grd;
+context.fillRect(10,10,280,135);
+// Radial Gradient
+var radGrad = context.createRadialGradient(150,80,10,200,98,150);
+radGrad.addColorStop(0,"magenta");
+radGrad.addColorStop(1,"green");
+context.fillStyle = radGrad;
+context.fillRect(10,155,280,135);
+</script>
+
+</body>
+
+</html>

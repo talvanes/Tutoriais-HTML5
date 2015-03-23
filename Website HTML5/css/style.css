@@ -1,0 +1,60 @@
+* {
+  font-family: alegreya, sans-serif;
+  font-size:1em;
+  text-align:justify;
+}
+body {
+  margin:0; 
+  padding:0;
+  background-color:white;
+  color:#545454;
+}
+/* All these new HTML5 elements are block-level */
+header, footer, section, article, nav, aside, main, figure {
+  display:block;
+}
+/* Some of the new HTML5 elements in action */
+header, nav, section, article, footer {
+  border:1px solid #545454;
+  margin:5px;
+  padding:8px;
+}
+  /* Navigation bar */
+nav {
+  border: none;
+  background-color: #a4a4a4;
+}
+nav ul {
+  margin:0; padding:0;
+  list-style:none;
+}
+nav li {
+  display:inline;
+  margin:5px;
+  list-style:none;
+}
+nav a, nav a:visited {
+  color: white;
+  text-decoration:none;
+}
+nav a:hover, nav a:active {
+  text-shadow: 2px 2px 2px #4a4a4a;
+  color: #b7b7b7;
+}
+  /* Color for header and footer */
+header, footer {
+  border: none;
+  color: white;
+  background-color: #545454;
+}
+/* each post (article tag) */
+article {
+  border: none;
+  color: #ffffff;
+  background-color: #4a4a4a;
+}
+article h2 {
+  color: #a4a4a4;
+  font-weight: bolder;
+  text-shadow: 2px 2px 1px #999;
+}
