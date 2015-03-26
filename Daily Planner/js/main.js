@@ -9,6 +9,17 @@ $(document).ready(function(e){
 		updateTask(e);
 	});
 
+	// RemoveTask Event
+	$("#task-table").on("click", "#remove-task", function(){
+		var id = $(this).data('id');
+		removeTask(id);
+	});
+	
+	// Clear All Tasks Event
+	$('#clear-tasks').on("click", function(){
+		clearAllTasks();
+	});
+
 	displayTasks();
 	
 	// Function to display tasks
@@ -28,7 +39,7 @@ $(document).ready(function(e){
 																"<td>" + value.priority + "</td>" +
 																"<td>" + value.date + "</td>" +
 																"<td>" + value.time + "</td>" +
-																"<td><a href='edit.html?id=" + value.id + "'>Edit</a> | <a href='#' id='remove-task'>Remove</a></td>" +
+																"<td><a href='edit.html?id=" + value.id + "'>Edit</a> | <a href='#' id='remove-task' data-id='" + value.id + "'>Remove</a></td>" +
 																"</tr>");
 			});
 		}
@@ -44,7 +55,7 @@ $(document).ready(function(e){
 	// Function to add a task
 	function addTask(e){
 		//Add Unique ID
-		var newDate = new Date().getTime();
+		var newDate = new Date();
 		var id = newDate;
 		
 		var task = $('#task').val();
@@ -125,6 +136,28 @@ $(document).ready(function(e){
 			};
 			tasks.push(new_task);
 			localStorage.setItem('tasks', JSON.stringify(tasks));
+		}
+	}
+	
+	// Function to remove tasks
+	function removeTask(id){
+		if(confirm("Are your sure you want to delete task id " + id + "?")){
+			var taskList = JSON.parse(localStorage.getItem('tasks'));
+			for(var i=0; i < taskList.length; i++){
+				if(taskList[i].id == id){
+					taskList.splice(i, 1);
+				}
+				localStorage.setItem('tasks', JSON.stringify(taskList));
+			}
+		}
+		window.location.reload();
+	}
+	
+	// Function to clear all tasks
+	function clearAllTasks(){
+		if(confirm("Are you sure you want to clear ALL tasks?")){
+			localStorage.removeItem('tasks');
+			window.location.reload();
 		}
 	}
 });
