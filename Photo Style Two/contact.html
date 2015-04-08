@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photo Style Two</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--<script src="js/modernizr.custom.57871.js"></script>-->
+    <!--[if lt IE 9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section id="container">
+      <!-- Header -->
+      <header>
+        <h1>photo<a href="index.html">_style_two</a></h1>
+        <p>Simple. Contemporary. Website Template</p>
+      </header>
+      <!-- Menu -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="portfolio.html">My Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li>
+            <a href="#">Example Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down One</a></li>
+              <li>
+                <a href="#">Drop Down Two</a>
+                <ul>
+                  <li><a href="#">Sub Drop Down One</a></li>
+                  <li><a href="#">Sub Drop Down Two</a></li>
+                  <li><a href="#">Sub Drop Down Three</a></li>
+                  <li><a href="#">Sub Drop Down Four</a></li>
+                  <li><a href="#">Sub Drop Down Five</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down Three</a></li>
+              <li>
+                <a href="#">Drop Down Four</a>
+                <ul>
+                  <li><a href="#">Sub Drop Down One</a></li>
+                  <li><a href="#">Sub Drop Down Two</a></li>
+                  <li><a href="#">Sub Drop Down Three</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down Five</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- Content -->
+      <section id="content">
+        <!-- Text -->
+        <h2>Contact</h2>
+        <form id="contact" name="contact" method="post" action="process.php">
+          <p>Please enter your name, a valid email address, your message and the answer to the simple maths question before sending your message.</p>
+          <p>
+            <label for="name">Name</label>&nbsp;
+            <input type="text" id="name" name="name" placeholder="Your name..." />
+          </p>
+          <p>
+            <label for="email">Email Address</label>&nbsp;
+            <input type="email" id="email" name="email" placeholder="Your email..." />
+          </p>
+          <p>
+            <label for="message">Message</label>&nbsp;
+            <textarea id="message" name="message" rows="5" cols="50">Your message...</textarea>
+          </p>
+          <p>To help prevent spam, please enter the answer to this question:</p>
+          <p>
+            <label for="captcha">+ = ?</label>&nbsp;
+            <input type="text" id="captcha" name="captcha" form="contact" />
+          </p>
+          <p>
+            <input type="submit" value="send" form="contact" />
+          </p>
+        </form>
+        
+      </section>
+      <!-- Slideshow: maybe jQuery in the future -->
+      <aside>
+        <img src="images/1.jpg" alt="Image 1" width="450" height="450" />
+      </aside>
+      <!-- div clear:both -->
+      <div style="clear: both;"></div>
+      <!-- Footer -->
+      <footer>
+        <p>&copy; photo_style_two. All Rights Reserved. | <a href="http://www.css3templates.com.uk">design from css3templates.com.uk</a></p>
+      </footer>
+    </section>
+  </body>
+</html>

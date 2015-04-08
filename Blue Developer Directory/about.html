@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blue Developer Directory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      function saveName(){
+        var name = document.getElementById('name');
+        localStorage.setItem('name', name.value);
+      }
+      function saveEmail(){
+        var email = document.getElementById('email');
+        localStorage.setItem('email', email.value);
+      }
+      
+      function initStorage() {
+        saveName();
+        saveEmail();
+      }
+      
+      function displayName(){
+        if(localStorage.getItem('name') !== null){
+          document.getElementById('displayname').innerHTML = "Welcome back, " + localStorage.getItem('name');
+        }
+      }
+      
+      function displayEmail(){
+        var msg = document.querySelector('#leftmenu div p');
+        if(localStorage.getItem('email') === null){
+          msg.innerHTML = "Please enter your email address:";
+        } else {
+          msg.innerHTML = "<strong>Subscribed email:</strong> " + localStorage.getItem('email');
+        }
+      }
+      
+      function clearAll(){
+        localStorage.clear();
+        window.location.reload();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1><span class="blue-text">Blue</span> Developer Directory</h1>
+        <h2>Find a Developer <span class="white-text">NOW</span></h2>
+      </header>
+
+      <nav id="menu">
+        <ul>
+          <li class="menuitem"><a href="index.html">Home</a></li>
+          <li class="menuitem"><a href="about.html">About Us</a></li>
+          <li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+          <li class="menuitem"><a href="register.html">Register As Developer</a></li>
+          <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div id="displayname">
+          <script>displayName();</script>
+        </div>
+      </nav>
+
+      <aside>
+        <nav id="leftmenu">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="browse.html">SEO</a></li>
+            <li><a href="browse.html">PHP</a></li>
+            <li><a href="browse.html">Ajax</a></li>
+            <li><a href="browse.html">jQuery</a></li>
+            <li><a href="browse.html">Web design</a></li>
+            <li><a href="browse.html">Web programming</a></li>
+            <li><a href="browse.html">Content Creation</a></li>
+            <li><a href="browse.html">Internet Marketing</a></li>
+            <li><a href="browse.html">XHTML Templates</a></li>
+          </ul>
+          <div style="margin-top: 2.5em">
+            <h3>Newsletter</h3>
+            <p>
+              <script>displayEmail();</script>
+            </p>
+            <form id="news" onsubmit="initStorage()">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" />
+              <input type="submit" value="Send" />
+              <a href="#" onclick="clearAll()">Clear</a>
+            </form>
+          </div>
+        </nav>
+      </aside>
+
+      <section>
+        <h2>Blue Developer Directory!</h2>
+        <h3>Who Are We?</h3>
+        <p>
+          We are a fictional website and service that list top web developers around the world. Search and browse fictional web developers on our website absolutely FREE!
+        </p>
+        <h3>What Skills Do Our Developers Have?</h3>
+        <p>
+          Our listed fictional web developers skill ranges from Graphic design with Photoshop, Illustrator and Fireworks to markup languages like HTML5, XHTML and XML to programming languages such as Javascript, PHP, Python and ASP.
+        </p>
+        <video id="ad" width="420" height="290" controls>
+          <source src="video/ad.mp4" type="video/mp4" />
+          Please update your browser.
+        </video>
+        <div style="width: 400px;">
+          <button onclick="playPause();">Play/Pause</button>
+          <button onclick="makeBig();">Big</button>
+          <button onclick="makeSmall();">Small</button>
+          <button onclick="makeNormal();">Normal</button>
+        </div>
+        <script>
+          var myVideo = document.getElementById('ad');
+          function playPause() {
+            if (myVideo.paused) {
+              myVideo.play();
+            } else {
+              myVideo.pause();
+            }
+          }
+          function makeBig() {
+            myVideo.width = 560;
+          }
+          function makeSmall() {
+            myVideo.width = 320;
+          }
+          function makeNormal() {
+            myVideo.width = 420;
+          }
+        </script>
+      </section>
+    </div><!-- container end -->
+    <br style="clear: both" />
+    <footer>
+      Copyright 2013, Blue Developer Directory - <a style="color: white;" href="info.html">Info Page</a>
+    </footer>
+  </body>
+</html>

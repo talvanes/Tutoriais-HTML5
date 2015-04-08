@@ -1,0 +1,16 @@
+CACHE MANIFEST:
+#2015-03-17
+
+CACHE:
+index.html
+info.html
+css/style.css
+images/background.png
+
+#Require the user to be online
+NETWORK:
+login.php
+
+#If the files above don't work, use these ones instead
+FALLBACK:
+*.html offline.html

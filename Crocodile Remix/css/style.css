@@ -1,0 +1,61 @@
+*{margin:0 auto 0 auto; text-align:justify}
+body{margin:0; padding:0; background:black; color:#928F6E; font-size:13px; font-family:Verdana,Arial,Helvetica,sans-serif}
+a{text-decoration:none}
+h2{font-size:24px; font-weight:500; padding:0.8em 0}
+p{margin-bottom:1.5em}
+input, textarea{border-radius:0.2em; border-style:none; outline:none}
+
+main{width:1000px; height:100%; background-color:#FFFFEB}
+
+header{width:980px; height:90px; background:#928f6e; color:#b0d40e; padding:30px 0 0 20px}
+header img{float:left}
+header section{float:right; margin-right:35px}
+header ul{list-style-type:none; margin-bottom:25px}
+header li{display:inline; list-style:none; padding:0 5px; width:1.1em}
+header li:first-child{border-right:2px solid #B0D40E}
+header li a, header li a:visited{color:#B0D40E}
+header li a:hover, header li a:active{color:#ffffeb}
+header form{background-color:#FFFFEB; border-radius:12px; padding:2px 8px}
+header input[type=search]{background-color:#FFFFEB; color:#928F6E; border-style:none}
+header input[type=submit]{background-color:#B0D40E; color:#FFFFEB; border-radius:10px; border-style:none}
+header input:focus{outline-style:none}
+
+nav{width:1000px; height:36px; background-color:#FFFFEB; clear:both}
+nav ul{float:left; list-style-type:none}
+nav li{display:inline; list-style-type:none; padding:10px 11px}
+nav li a, nav li a:visited{display:inline-block; color:#928F6E; padding:10px 11px}
+nav li a:hover, nav li a:active{color:#B0D40E}
+nav li.active a, nav li.active a:visited{display:inline-block; background-color:#928F6E; color:#FFf; padding:10px 22px; border-radius:0 0 3px 3px}
+nav li.active a:hover, nav li.active a:active{color:#B0D40E}
+
+aside{float:right; background-color:#FFFFEB; width:300px; padding:30px}
+aside h2{border-bottom:1px dashed #928F6E; padding-bottom:8px}
+aside ul{list-style-image:url("../images/bullet.png"); padding:0 0 0 20px}
+aside li{padding:1em 0 0 5px}
+aside li a, aside li a:visited{color:#928F6E}
+
+footer{width:970px; background-color:#928F6E; color:#FFFFEB; padding:30px 0 10px 30px}
+footer section{float:left; width:240px; padding-left:40px; padding-right:40px}
+footer section:not(:last-of-type){border-right:1px solid #FFFFEB}
+footer h3{font-size:18px; font-weight:200; padding-bottom:0.5em; border-bottom:1px dashed #FFFFEB}
+footer ul{list-style-type:none; margin:0; padding:0}
+footer li{padding:0.5em 0}
+footer li a, footer li a:visited{color:#FFFFEB}
+footer p{clear:both; font-size:1em; padding:60px 0 0 40px; line-height:0}
+footer p a, footer p a:visited{color:#B0D40E}
+footer form{width:240px}
+footer input[type=text], footer textarea{width:240px; margin:2px 0 0 0; background-color:#FFFFEB; color:#928F6E; outline:none}
+footer textarea{height:60px}
+footer input[type=submit]{background-color:#b4b087; color:#FFFFEB; padding:3px 6px}
+
+.clear{clear:both}
+
+#content{background-color:#FFFFEB; float:left; width:579px; padding:50px 30px; clear:both; border-right:1px solid #928F6E}
+#content article{line-height:1.5em}
+#content button{background-color:#B0D40E; color:#FFFFEB; border-style:none; border-radius:.2em; width:75px; margin:10px auto; float:right; padding:5px 3px; font-size:10px; font-weight:700}
+#content button:focus{outline-style:none}
+#content form{margin:15px 15px 40px}
+#content label, #content input, #content textarea{display:block; width:400px}
+#content label{font-size:16px; padding:0.5em 0}
+#content input, #content textarea{background-color:#FFFFEB; color:#928F6E; border:1px solid #928F6E}
+#content input[type=submit]{display:inline; width:90px; margin-left:70px; padding:5px 25px; border-style:none; background-color:#928F6E; color:#FFFFEB}

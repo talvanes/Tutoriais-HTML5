@@ -1,0 +1,57 @@
+@font-face{  font-family:NewsCycle;   src:url(../fonts/newscycle-regular.ttf)}
+@font-face{  font-family:NewsCycle;   src:url(../fonts/newscycle-bold.ttf);   font-weight:bold}
+@font-face{  font-family:YanoneKaffeesatz;   src:url(../fonts/yanonekaffeesatz-regular.otf)}
+@font-face{  font-family:YanoneKaffeesatz;   src:url(../fonts/yanonekaffeesatz-bold.otf);   font-weight:bold}
+
+*{  margin:0 auto 0 auto;   padding:0;   text-align:left}
+body{  font-family:NewsCycle,arial,sans-serif;   font-size:1.2em;   background-image:url(../images/pattern.png);  background-repeat:repeat;  background-attachment:fixed;  color:black;  font-stretch:condensed}
+h1, h2, h3{ font-weight:lighter}
+h1{ font-size:2.08em}
+h2{ padding-bottom:12px}
+h3{ padding-bottom:8px}
+a{ color:#09BCE8}
+a:hover{ text-decoration:none}
+label{ display:block;  width:140px;  float:left}
+input, textarea{ clear:both;  float:right;  display:block;  width:300px;  border-radius:5px;  border:1px solid #a1a1a1}
+input[type=text], input[type=email]{ height:20px}
+input[type=submit]{ background:#222;  color:white;  width:100px;  font-size:150%;  font-family:yanonekaffeesatz,arial,sans-serif;  text-align:center;  margin-left:320px;  margin-top:5px;  padding:5px;  border-radius:5px}
+
+#container{ width:930px}
+
+header{ width:930px;  height:150px;  padding-left:25px;  padding-top:9px}
+header a{ color:#09BCE8;  text-decoration:none}
+header a:hover{ color:black}
+header p{ line-height:0.95em}
+
+nav{ margin:-20px auto 20px auto;  width:930px;  height:46px;  background:#222;  border:1px solid black}
+nav ul{ list-style:none;  float:left}
+nav ul li{ list-style:none;  position:relative;  float:left;  display:inline}
+nav ul li.active a{ color:#09BCE8}
+nav ul li a{ display:block;  text-decoration:none;  color:white;  padding:5px 25px}
+nav ul li a:hover{ color:#09BCE8}
+
+nav ul li ul{ position:absolute;  top:46px;  left:0;  background:#222;  display:none}
+nav ul li:hover ul{ display:block}
+nav ul li ul li{ width:200px}
+
+nav ul li:hover ul li ul{  position:absolute;   top:0;   left:200px;   display:none}
+nav ul li:hover ul li:hover ul{  display:block}
+nav ul li ul li ul li{  display:block;   width:220px}
+
+#content{  float:left;   background:white;   font-size:0.76em;   width:440px;   height:430px;   padding:12px 20px 10px}
+#content p{  padding-bottom:22px;   line-height:1.5em}
+#content ul{  list-style-image:url(../images/bullet.png);   padding-left:25px}
+#content li{  display:list-item}
+#content .post span.date{  float:left;   display:inline-block;   margin:0 15px 15px 0;   background:url(../images/calendar.png) no-repeat;  display:inline-block;  width:52px; height:45px;  text-align:center;  font-size:18px;  line-height:1em;  font-weight:bolder}
+#content .post a{ display:inline-block}
+#content .post a:hover{ text-decoration:none}
+#content .post p{ clear:both}
+#content .label a{ font-size:23px}
+#content form p{ clear:both}
+
+aside{ float:right}
+
+footer{ width:930px;  background:#222;  border:1px solid black;  color:white;  margin:15px 0;  padding:10px 0 10px 0}
+footer p{ text-align:center}
+footer a{ text-decoration:none;  color:white}
+footer a:hover{ color:#000}

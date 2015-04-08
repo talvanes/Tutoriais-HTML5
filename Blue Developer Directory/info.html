@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html manifest="developer.manifest">
+  <head>
+    <title>Blue Developer Directory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      function saveName(){
+        var name = document.getElementById('name');
+        localStorage.setItem('name', name.value);
+      }
+      function saveEmail(){
+        var email = document.getElementById('email');
+        localStorage.setItem('email', email.value);
+      }
+      
+      function initStorage() {
+        saveName();
+        saveEmail();
+      }
+      
+      function displayName(){
+        if(localStorage.getItem('name') !== null){
+          document.getElementById('displayname').innerHTML = "Welcome back, " + localStorage.getItem('name');
+        }
+      }
+      
+      function displayEmail(){
+        var msg = document.querySelector('#leftmenu div p');
+        if(localStorage.getItem('email') === null){
+          msg.innerHTML = "Please enter your email address:";
+        } else {
+          msg.innerHTML = "<strong>Subscribed email:</strong> " + localStorage.getItem('email');
+        }
+      }
+      
+      function clearAll(){
+        localStorage.clear();
+        window.location.reload();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1><span class="blue-text">Blue</span> Developer Directory</h1>
+        <h2>Find a Developer <span class="white-text">NOW</span></h2>
+      </header>
+
+      <nav id="menu">
+        <ul>
+          <li class="menuitem"><a href="index.html">Home</a></li>
+          <li class="menuitem"><a href="about.html">About Us</a></li>
+          <li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+          <li class="menuitem"><a href="register.html">Register As Developer</a></li>
+          <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div id="displayname">
+          <script>displayName();</script>
+        </div>
+      </nav>
+
+      <aside>
+        <nav id="leftmenu">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="browse.html">SEO</a></li>
+            <li><a href="browse.html">PHP</a></li>
+            <li><a href="browse.html">Ajax</a></li>
+            <li><a href="browse.html">jQuery</a></li>
+            <li><a href="browse.html">Web design</a></li>
+            <li><a href="browse.html">Web programming</a></li>
+            <li><a href="browse.html">Content Creation</a></li>
+            <li><a href="browse.html">Internet Marketing</a></li>
+            <li><a href="browse.html">XHTML Templates</a></li>
+          </ul>
+          <div style="margin-top: 2.5em">
+            <h3>Newsletter</h3>
+            <p>
+              <script>displayEmail();</script>
+            </p>
+            <form id="news" onsubmit="initStorage()">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" />
+              <input type="submit" value="Send" />
+              <a href="#" onclick="clearAll()">Clear</a>
+            </form>
+          </div>
+        </nav>
+      </aside>
+
+      <section>
+        <h2>Blue Developer Directory Info</h2>
+        <p>This page is cached</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac auctor diam. Maecenas egestas nisi sit amet turpis vestibulum, ac maximus est euismod. Nunc mollis libero finibus sollicitudin pretium. Aliquam maximus sodales nisl. Curabitur eleifend quam malesuada, consectetur dolor nec, suscipit nisl. Suspendisse eget mauris vel urna sagittis interdum. Nunc sodales ligula risus, sit amet finibus sem rutrum vitae. Mauris enim lectus, maximus non imperdiet vel, aliquet a enim. Vivamus id leo volutpat massa iaculis hendrerit ultrices in mi. Mauris odio elit, facilisis id ultricies eu, ornare iaculis orci. Vivamus efficitur sodales lacus, in euismod urna vestibulum a. In egestas neque nec lacinia fringilla. Donec nulla dui, sodales cursus molestie ut, ultricies eu libero. In commodo felis sed nulla tristique, at faucibus ipsum facilisis.
+        </p>
+        <p>
+Etiam non malesuada nisl. Donec facilisis, neque in dictum condimentum, diam libero pellentesque mi, vitae cursus felis lectus id turpis. Nam vitae varius velit, nec congue ligula. Phasellus ornare elit ut odio elementum tempor. Sed interdum interdum finibus. Aliquam sodales aliquam purus eget blandit. Nam ante risus, varius ut aliquam egestas, sollicitudin sit amet lorem. Phasellus dapibus id justo eget maximus. Nullam euismod, sapien rutrum pharetra pellentesque, arcu ipsum consequat nibh, in tristique sapien felis nec velit. Vivamus id commodo est. Morbi eget arcu eget sapien imperdiet ultricies. Phasellus eu magna scelerisque, semper arcu non, porttitor risus. Nulla tincidunt ipsum non fringilla faucibus. Curabitur ac massa sit amet lectus ullamcorper eleifend sed ut leo. Quisque non erat et nulla maximus dapibus. Nunc finibus semper ante sit amet ornare.
+        </p>
+        <p>
+Donec euismod felis purus, tristique porta velit aliquet ac. Donec viverra velit urna. Praesent non nisi in elit malesuada pulvinar. Nunc ac interdum urna. Quisque in tellus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra massa quis lorem semper lobortis. In dictum dolor tortor, at fermentum ante elementum id. Maecenas dapibus ligula nec velit pretium imperdiet. Quisque tincidunt nisi id ex tempor pretium. Cras elementum eros nulla, vitae tincidunt risus ultricies sed. Morbi nec ultricies magna. Sed accumsan lectus dolor, auctor rhoncus libero blandit sed. In congue nisl leo, et aliquet tellus cursus quis.
+        </p>
+        <p>
+Suspendisse blandit dui quis quam laoreet, eget facilisis elit semper. Pellentesque varius diam ornare arcu ullamcorper, in auctor eros fermentum. Sed dapibus vulputate purus, eget ullamcorper est vestibulum ut. Duis at nisl elementum, molestie nunc a, placerat magna. Suspendisse eleifend, orci vitae imperdiet imperdiet, purus ligula tincidunt felis, eu tincidunt mauris ex id nibh. Aenean nisl enim, consectetur vehicula est nec, accumsan pulvinar neque. Praesent eget ante ligula.
+        </p>
+        <p>
+Donec varius enim non est tristique, a accumsan nunc semper. Sed id iaculis mauris. Duis venenatis metus quis nibh ultricies faucibus. In vulputate sagittis ex sit amet posuere. Pellentesque euismod arcu nec elit porta, et vulputate nisi tincidunt. In venenatis est vel lectus vulputate tempor. Cras convallis semper consequat. Quisque consequat, est in auctor sagittis, diam enim malesuada felis, a tempor urna justo nec nisl. Proin tincidunt ac neque vitae sodales. Aliquam sagittis iaculis velit, sed ullamcorper risus luctus ac. Etiam lobortis diam quis odio bibendum, et imperdiet ante tincidunt. Nullam bibendum lacus neque. Phasellus a scelerisque quam, quis consectetur lacus. Mauris finibus ultricies diam ac pulvinar.
+        </p>
+        <p>
+Proin pulvinar quam nibh, eu eleifend risus aliquam vitae. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum eget justo vitae ligula maximus efficitur eu vitae nisi. Sed pellentesque efficitur fermentum. Praesent hendrerit euismod mi ac euismod. Ut feugiat magna nec libero dictum hendrerit volutpat a magna. Vivamus euismod aliquam est quis fringilla. Phasellus rutrum mi nec euismod fringilla. Maecenas lacinia odio non ante finibus tincidunt. Pellentesque tortor sapien, maximus sed ex quis, vestibulum eleifend massa. Curabitur pellentesque dolor sed sapien consectetur tincidunt vel vel nisi. Cras nec aliquet nunc, quis bibendum lorem. 
+        </p>
+      </section>
+    </div><!-- container end -->
+    <br style="clear: both" />
+    <footer>
+      Copyright 2013, Blue Developer Directory
+    </footer>
+  </body>
+</html>
