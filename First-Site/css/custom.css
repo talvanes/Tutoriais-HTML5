@@ -13,7 +13,8 @@ body {
 
 .jumbotron {
 	text-align: center;
-	line-height: 1.5;
+	background-image: url('../images/hero_image.jpg');
+	color: white;
 }
 
 ul.nav, .jumbotron h1 {
@@ -27,10 +28,13 @@ ul.nav, .jumbotron h1 {
 
 .jumbotron p {
 	margin-bottom: 30px;
+	font-weight: 100;
+	padding: 0 50px;
 }
 
 ul.nav {
 	font-size: 13px;
+	line-height: 1.333333333333333333;
 }
 
 .btn-lg {
