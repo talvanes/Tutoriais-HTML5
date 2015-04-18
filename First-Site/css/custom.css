@@ -40,3 +40,8 @@ ul.nav {
 .btn-lg {
 	font-size: 36px;
 }
+
+.emphasis {
+	color: red;
+	font-size: 26px;
+}
